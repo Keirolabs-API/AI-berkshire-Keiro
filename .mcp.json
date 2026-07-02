@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "keirolabs": {
+      "url": "https://kierolabs.space/mcp/api",
+      "transport": "streamable-http",
+      "headers": {
+        "Authorization": "Bearer keiro_REPLACE_ME"
+      }
+    }
+  }
+}
