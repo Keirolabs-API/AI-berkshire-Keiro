@@ -6,7 +6,7 @@ This is a Keiro-enabled fork of [`xbtlin/ai-berkshire`](https://github.com/xbtli
 
 The original skills drive their web research through Claude Code's built-in `WebSearch` / `WebFetch`. **This integration swaps that layer for Keiro's MCP tools** — multi-source deep research, structured single-page extraction, and cited direct answers — so the agents pull decision-grade material instead of "analysis that looks right."
 
-The upstream project is Chinese-first. The investment framework is language-agnostic; see [English output](#english-output) to run it in English without editing the skills.
+The upstream project is Chinese-first. The investment framework is language-agnostic; see [English output](#english-output) to run it in English without editing the skills. For the full reference — every skill, every tool, the four-master framework, file layout, rate limits — see [`docs/PROJECT_GUIDE.md`](docs/PROJECT_GUIDE.md).
 
 ---
 
