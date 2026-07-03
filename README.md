@@ -49,6 +49,7 @@ Per-agent assignment is handled by the preflight skill (see [Setup](#setup)).
 
 | Path                                         | Purpose                                                                 |
 |----------------------------------------------|-------------------------------------------------------------------------|
+| `install.sh`                                 | One-command install + setup (env, key injection, skill install).      |
 | `skills/*.md`, `codex-skills/`, `codex-prompts/` | The investment-research skills (unmodified upstream).              |
 | `.mcp.json`                                  | Registers the Keiro MCP server for this repo.                          |
 | `.env.keiro.example` → `.env.keiro`         | Your `keiro_` API key (gitignored).                                    |
@@ -64,19 +65,13 @@ Per-agent assignment is handled by the preflight skill (see [Setup](#setup)).
 
 ## Setup
 
+One command. It creates `.env.keiro` (prompts for your `keiro_` key), injects it into `.mcp.json`, and installs the skills + Keiro preflight into `~/.claude/commands/`.
+
 ```bash
-# 1. add your Keiro API key (create one starting with keiro_ in the Keiro dashboard → API Keys)
-cp .env.keiro.example .env.keiro
-$EDITOR .env.keiro            # set KEIRO_API_KEY=keiro_...
-
-# 2. inject it into .mcp.json
-./scripts/keiro-setup.sh
-
-# 3. install the preflight skill so Claude Code can run it
-cp keiro-integration/keiro-research-preflight.md ~/.claude/commands/
-
-# 4. restart Claude Code in this repo, confirm the Keiro MCP server connects
+./install.sh
 ```
+
+Get a key (starts with `keiro_`) from the Keiro dashboard → API Keys, then restart Claude Code in this repo so the MCP server loads.
 
 ## Usage
 
